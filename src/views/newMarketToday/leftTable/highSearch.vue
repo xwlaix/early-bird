@@ -1,0 +1,150 @@
+<template>
+  <el-dialog
+    v-el-drag-dialog
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
+    <div
+      v-for="(value, key) in textArr"
+      :key="key"
+      style="margin-top:10px;"
+    >
+      <el-select
+        v-model="value.type"
+        filterable
+        clearable
+        placeholder="请选择类型（唯一）"
+        size="small"
+        style="width: 200px;"
+        class="filter-item"
+      >
+        <el-option
+          v-for="item in optionsSelect"
+          :key="item.id"
+          :value="item.name"
+        />
+      </el-select>
+      <el-select
+        v-model="value.judge"
+        filterable
+        clearable
+        placeholder="请选择判断"
+        size="small"
+        style="width: 120px;"
+        class="filter-item"
+      >
+        <el-option
+          v-for="item in optionsValue"
+          :key="item.id"
+          :value="item.name"
+        />
+      </el-select>
+      <el-input v-model.trim="value.value" placeholder="请输入数值" size="small" style="width: 120px;" clearable class="filter-item" />
+      <el-button icon="el-icon-delete" type="danger" size="small" @click.prevent="remove(value)" />
+      <el-button type="success" size="small" @click="addOne">新增</el-button>
+    </div>
+    <div slot="footer" class="dialog-footer">
+      <el-button size="small" @click="handleStatus">取消</el-button>
+      <el-button size="small" type="primary" @click="updateData">确定</el-button>
+    </div>
+  </el-dialog>
+</template>
+
+<script>
+import elDragDialog from '@/directive/el-drag-dialog'
+export default {
+  directives: { elDragDialog },
+  //   props: {
+  //   visible: {
+  //     type: Boolean,
+  //     default: false
+  //   }
+  // },
+  data() {
+    return {
+      textArr: [{
+
+      }],
+      optionsSelect: [{
+        id: '￥',
+        name: '市场价值'
+      }, {
+        id: '$',
+        name: '期望年化率'
+      }, {
+        id: 'HK$',
+        name: '买家获得年化率'
+      }, {
+        id: 'NT$',
+        name: '现金池'
+      }, {
+        id: '€',
+        name: '清算总额'
+      }, {
+        id: 'JPY￥',
+        name: '清算金额占比'
+      }, {
+        id: 'per',
+        name: '供应商参加占比'
+      }, {
+        id: 'number',
+        name: '供应商参加数量'
+      }, {
+        id: 'sumPer',
+        name: '供应商落选发票总额占比'
+      }, {
+        id: 'sumNumber',
+        name: '供应商落选发票数量'
+      }, {
+        id: 'least',
+        name: '供应商最低收款线'
+      }, {
+        id: 'agr',
+        name: '供应商开价年化率'
+      }, {
+        id: 'getAgr',
+        name: '供应商获得年化率'
+      }],
+      optionsValue: [{
+        id: '￥',
+        name: '等于'
+      }, {
+        id: '$',
+        name: '不等于'
+      }, {
+        id: 'HK$',
+        name: '大于等于'
+      }, {
+        id: 'NT$',
+        name: '小于'
+      }],
+      text: ''
+    }
+  },
+  methods: {
+    handleStatus() {
+      this.$emit('handleStatus')
+    },
+    remove(value) {
+      var index = this.textArr.indexOf(value)
+      if (index !== -1) {
+        this.textArr.splice(index, 1)
+      }
+    },
+    addOne() {
+      this.textArr.push({})
+    },
+    updateData() {
+      console.log(this.textArr)
+      // const str = {}
+      // this.textArr.map((v, i) => {
+      //   const str1 = v.key
+      //   const str2 = v.value
+      //   str[str1] = str2
+      // })
+      // this.text = JSON.stringify(str)
+      // console.log(this.textArr)
+    }
+  }
+}
+</script>

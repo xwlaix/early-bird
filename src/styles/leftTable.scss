@@ -1,0 +1,108 @@
+.leftTable{
+  .line-filter {
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    background: #fff;
+    padding: 5px;
+    .filter-item-select{
+      width:60px!important;
+      color: #fff!important;
+      .el-input__inner {
+        background: #409eff !important;
+        color: #fff!important;
+        padding: 0px 3px !important;
+      }
+      .el-select__caret,.is-reverse {
+        padding-left: 3px !important;
+        color: #fff;
+      }
+      .el-input__suffix {
+        right: -2px !important;
+      }
+      .el-input__inner {
+        color: #fff;
+        padding: 0px 7px;
+      }
+    }
+    .name{
+      flex: 1;
+      margin: 0 3px;
+      .el-input__inner{
+        background: #fff;
+        color: #000;
+      }
+    }
+    .search{
+      width: 41px;
+      background: #409eff!important;
+      color: #fff!important;
+      border-top-left-radius: 0!important; 
+      border-bottom-left-radius: 0!important;
+    }
+    .right-btn{
+      width: 44px;
+    }
+    .el-input__inner {
+      background: #409eff;
+      padding: 0px 3px !important;
+    }
+    .el-select__caret, .is-reverse {
+      padding-left: 3px !important;
+      color: #fff;
+    }
+  }
+  
+  .total{
+    padding:5px;
+    background: #fff;
+  }
+  .pagination-container {
+    padding: 0;
+    margin-bottom:5px;
+    text-align: center;
+    .fisrtPage {
+      float: left;
+    }
+    .lastPage {
+      margin-left: 0;
+    }
+    .el-pagination__jump{
+      margin-left: 0;
+    }
+    .el-pagination button {
+      border: none;
+      padding: 0;
+      background: 0 0;
+    }
+  }
+  .el-button--mini,
+  .el-button--mini.is-round {
+    padding: 7px 9px;
+  }
+  .odd-row,.el-table--enable-row-hover .el-table__body tr.odd-row:hover>td {
+    background-color: rgb(212, 212, 212);
+  }
+  .even-row,.el-table--enable-row-hover .el-table__body tr.even-row:hover>td {
+    background-color: rgb(199, 199, 199);
+  }
+  .el-table {
+    padding: 0 !important;
+  }
+  .current-row > td {
+     background: rgb(204, 255, 255) !important;
+  }
+}
+.supermarket {
+  color: #67C23A!important;
+}
+.manufacturing {
+  color: #E6A23C!important;
+}
+.retail {
+  color: #F56C6C!important;
+}
+.other {
+  color: #409EFF!important;
+}

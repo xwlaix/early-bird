@@ -1,0 +1,57 @@
+.baseInfo{
+  .el-card__header{
+    background: #fff!important;
+    padding:  0!important;
+  }
+  .title{
+    display: inline-block;
+  }
+  .handle{
+    position: absolute;
+    right: 30px;
+    top: 43px;
+    z-index: 100;
+    span{
+      font-size: 20px;
+    }
+  }
+  .flow-ul {
+    flex-wrap: wrap;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 14px;
+    display: flex;
+    padding-left: 10px;
+  }
+  .flow-ul li:nth-child(3n+1)  {
+    padding: 5px 0;
+    width: 33% !important;
+    white-space: nowrap;
+  }
+  .flow-ul li:nth-child(3n+2)  {
+    padding: 5px 0;
+    width: 30% !important;
+    white-space: nowrap;
+  }
+  .flow-ul li:nth-child(3n+0)  {
+    padding: 5px 0;
+    width: 36% !important;
+    white-space: nowrap;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .flow-ul span {
+    font-weight: bold;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .flow-ul div {
+    display: inline-block;
+  }
+}
